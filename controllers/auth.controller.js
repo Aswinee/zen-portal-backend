@@ -58,7 +58,8 @@ exports.registerController = (req, res) => {
       from: process.env.USER_EMAIL,
       to: email,
       subject: "Account Activation Link",
-      text: `Hi from your nodemailer project <p>${process.env.CLIENT_URL}/users/activate/${token}</p>`,
+      text: `Use this one time link to register 
+      ${process.env.CLIENT_URL}/users/activate/${token}`,
     };
 
     const emailData = {
@@ -226,8 +227,8 @@ exports.forgotPasswordController = (req, res) => {
           from: process.env.USER_EMAIL,
           to: email,
           subject: "Password Reset link",
-          text: ` <h1>Please use the following link to reset your password</h1>
-          <p>${process.env.CLIENT_URL}/users/password/reset/${token}</p>
+          text: ` Please use the following link to reset your password
+          ${process.env.CLIENT_URL}/users/password/reset/${token}
           <hr />`,
         };
 
